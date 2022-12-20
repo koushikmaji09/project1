@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Idealsoft</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+    :root{
+  --main-bg:#60ab7e;
+}
+
+.main-bg {
+  background: var(--main-bg) !important;
+}
+.main-bg1 {
+  background:rgb(0, 255, 68)
+}
+
+input:focus, button:focus {
+  border: 1px solid var(--main-bg) !important;
+  box-shadow: none !important;
+}
+
+.form-check-input:checked {
+  background-color: var(--main-bg) !important;
+  border-color: var(--main-bg) !important;
+}
+
+.card, .btn, input{
+  border-radius:0 !important;
+}
+</style>
+<body class="main-bg">
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card shadow">
+              <div class="card-title text-center border-bottom">
+                <h2 class="p-3">Sign In</h2>
+              </div>
+              <div class="card-body">
+                 <form action="/signin" method="post">
+        <div class="mb-4">
+            <label class="form-label" for="inputUserId">User ID</label>
+            <input type="text" class="form-control" name="uid" placeholder="Enter Your Id" required>
+        </div>
+        <div class="mb-4">
+            <label class="form-label" for="inputPassword">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Enter Password" required>
+        </div>
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+        <%
+          if(status==2)
+          {
+        %>  
+        
+          <!-- Success Alert -->
+          <div class="alert alert-success alert-dismissible d-flex align-items-center fade show">
+              <i class="bi-check-circle-fill"></i>
+              <strong class="mx-2"></strong> You  have been logout successfully!!!
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+        <%
+        }
+        else if(status==1)
+        {
+        %>
+        <div class="alert alert-success alert-dismissible d-flex align-items-center fade show">
+          <i class="bi-check-circle-fill"></i>
+          <strong class="mx-2"></strong> Wrong user ID and Password!!!
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      </div>
+        <%
+        }
+        %>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</body>
+</html>

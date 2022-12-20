@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 550px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+        
+    /* On small screens, set height to 'auto' for the grid */
+    @media screen and (max-width: 767px) {
+      .row.content {height: auto;} 
+    }
+    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: hsla(0, 0%, 7%, 0.911);
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #550bf4;
+}
+:root{
+  --main-bg:#60ab7e;
+}
+
+.main-bg {
+  background: var(--main-bg) !important;
+}
+.main-bg1 {
+  background:rgb(0, 255, 68)
+}
+
+input:focus, button:focus {
+  border: 1px solid var(--main-bg) !important;
+  box-shadow: none !important;
+}
+
+.form-check-input:checked {
+  background-color: var(--main-bg) !important;
+  border-color: var(--main-bg) !important;
+}
+
+.card, .btn, input{
+  border-radius:0 !important;
+}
+  </style>
+</head>
+<body>
+  <ul>
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a class="active" href="/logout">Logout</a></li>
+  </ul>
+<nav class="navbar navbar-inverse visible-xs">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/update">Update</a></li>
+        <li><a href="#">Items</a></li>
+        <li><a href="#">Clients</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav hidden-xs">
+      <h2>Logo</h2>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="update">Update</a></li>
+        <li><a href="items">Items</a></li>
+        <li><a href="clients">Clients</a></li>
+        <li><a href="contact">Contact</a></li>
+      </ul><br>
+    </div>
+    <div>
+      
+    </div>
+    
+    <div class="container">
+      <div class="row justify-content-center mt-5">
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="card shadow">
+            <div class="card-title text-center border-bottom">
+              <h2 class="p-3">Sign In</h2>
+            </div>
+            <div class="card-body">
+               <form action="/update" method="post">
+      <div class="mb-4">
+          <label class="form-label" for="inputUserId">User ID</label>
+          <input type="text" class="form-control" name="uid" placeholder="Enter Your Id" value="<%=uid%>" required>
+      </div>
+      <div class="mb-4">
+          <label class="form-label" for="inputPassword">Password</label>
+          <input type="password" class="form-control" name="password" placeholder="Enter Password" value="<%=pwd%>" required>
+      </div>
+      <div class="mb-4">
+          <label class="form-label" for="UpdatePassword">Update Password</label>
+          <input type="password" class="form-control" name="upassword" placeholder="Update Password" required>
+      </div>
+      <div class="d-grid">
+          <button type="submit" class="btn btn-primary">Update</button>
+      </div>
+      <div class="d-grid">
+        <%=msg%>
+    </div>
+  </form>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+</div>
+    
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
